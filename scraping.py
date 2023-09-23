@@ -1,17 +1,17 @@
 import requests
-from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd
 
-
-driver = webdriver.Chrome()
+url = "https://www.flipkart.com/laptops/~buyback-guarantee-on-laptops-/pr?sid=6bo%2Cb5g&uniqBStoreParam1=val1&wid=11.productCard.PMU_V2"
 
 products=[]
 prices=[]
 ratings=[]
-url = "https://www.flipkart.com/laptops/~buyback-guarantee-on-laptops-/pr?sid=6bo%2Cb5g&uniqBStoreParam1=val1&wid=11.productCard.PMU_V2"
-
 response = requests.get(url)
+
+#pip install selenium
+#pip install pandas
+#pip3 install beautifulsoup4
 
 content = response.text
 soup = BeautifulSoup(content, features="html.parser")
